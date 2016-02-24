@@ -1,5 +1,6 @@
 package edu.ycp.cs320.movethesquare.ui;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -62,10 +63,9 @@ public class GameView extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g); // paint background
 		
-		g.setColor(Color.GREEN);
 
 		Square square = model.getSquare();
-		
+		g.setColor(square.changeColor());
 		g.fillRect((int) square.getX(), (int) square.getY(), (int) square.getWidth(), (int) square.getHeight());
 	}
 	
